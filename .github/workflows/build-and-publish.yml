@@ -1,0 +1,19 @@
+name: Bible Beasts Build and Publish
+
+on:
+  push:
+  #   branches: [ main ]
+  # pull_request:
+  #   branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build Bible Beasts and Publish Image
+        run: |
+          docker login --username norlinga --password ${{ secrets.GHCR_TOKEN }} ghcr.io
+          docker build . --tag ghcr.io/norlinga/bible-beasts:latest
+          docker push ghcr.io/norlinga/bible-beasts:latest
