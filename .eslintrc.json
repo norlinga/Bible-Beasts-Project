@@ -1,3 +1,12 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "no-console": "warn",
+    "indent": ["error", 2],
+    "semi": ["error", "always"],
+    "no-unused-vars": "warn",
+    "quotes": ["error", "single"],
+    "no-undef": "error",
+    "max-len": ["warn", { "code": 80 }]
+  }
 }
