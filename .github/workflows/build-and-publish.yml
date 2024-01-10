@@ -2,15 +2,16 @@ name: Bible Beasts Build and Publish
 
 on:
   push:
-  #   branches: [ main ]
-  # pull_request:
-  #   branches: [ main ]
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Application
+        uses: actions/checkout@v4
 
       - name: Build Bible Beasts and Publish Image
         run: |
