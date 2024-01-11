@@ -54,10 +54,38 @@ We'll include a linting step as a proxy for all those sorts of similar steps.
 
 CI is also useful as a centralized place to run tasks that might not be well suited to running on individual user machines for whatever reason.
 
->> Thinking about things like license counts, user credential leakage, particularly expensive processes, as reasons you might not want to run all tasks locally
+> Thinking about things like license counts, user credential leakage, particularly expensive processes, as reasons you might not want to run all tasks locally
 
 I will focus my effort here on building images, and provide some controls around the PR workflows.
 In order to exercise those controls, I'm adding additional rules to `.eslintrc.json` to force some linting errors.
 
 Github Actions-specific note are in the github_actions.md file.
 
+## Deploy to AWS (Ideally via IAC)
+
+Partial success and some interesting learnings for yours truly, but ultimately not too much great stuff here to draw attention to.
+Expanded discussion in the deploy_to_aws.md file.
+
+## Conclusions
+
+Thanks for the opportunity!
+
+This exercise gives a lot of room to flex and demonstrate skills, interests, biases, etc.
+And of course each topic could be a full discussion in itself.
+For example, how much to we want to... spruce up the Docker image itself?
+We could add fun changes to the command prompt in a `.bash_profile`
+
+```bash
+PS1='\[\033[01;34m\]🐳 \[\033[00m\][\u@\h \W]\$ '
+```
+
+Or what about volumes?
+And 15 other quality of life enhancements that could be slapped in there.
+
+Github Actions was also a pleasant surprise.
+I've used a number of tools in the CI space (CircleCI most recently) and was pleased with the simplicity and tooling around Actions.
+
+Branching strategies - I committed within branches thare are named maybe a little funny.
+I go straight to feature branching for most things, and I've worked a fair bit with project planning tools that can pull context into sprints / tasks / etc. from branch names.
+Something like `OPS-add-image-build-and-linting-actions` might notionally be a ticket for the OPS team, with the ticket name included in the branch.
+That habit has come in handy on occassion and I've just kept with it so... that explains the weird branch names?
